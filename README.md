@@ -1,24 +1,10 @@
-# README
+# Budget App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is app will be contain various of things.
 
-Things you may want to cover:
+First of all:
+*   You can check your daily home budget for better savings
 
-* Ruby version
+*   Graphs for better visualization
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*   And many more.....
