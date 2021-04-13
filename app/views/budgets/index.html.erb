@@ -1,12 +1,10 @@
-<h1>All Budgets</h1>
+<h1>Dashboard</h1>
 
 
-<ul>
-  <% @budgets.each do |budget| %>
-    <li>
-      <%= link_to budget.title, budget%>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "New Budget", new_budget_path %>
+<% if current_user %>
+  <h2><%= current_user.email %></h2>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "Sign Up", new_user_registration_path %>
+  <%= link_to "Sign In", new_user_session_path %>
+<% end %>
