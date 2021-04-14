@@ -12,6 +12,7 @@ gem 'sass-rails',               '6.0.0'
 gem 'webpacker',                '4.3.0'
 gem 'turbolinks',               '5.2.1'
 gem 'jbuilder',                 '2.10.0'
+gem 'devise'
 gem 'bootsnap', '1.4.6', require: false
 
 group :development, :test do
@@ -31,8 +32,7 @@ group :test do
   gem 'selenium-webdriver',       '3.142.7'
   gem 'webdrivers',               '4.6.0'
   gem 'rails-controller-testing', '1.0.4'
-  gem 'minitest',                 '5.14.4'
-  gem 'minitest-reporters',       '1.3.8'
+  gem 'rspec'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
 end
