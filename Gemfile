@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails',                    '6.0.3.5'
 gem 'bcrypt',                   '3.1.13'
+gem 'rails',                    '6.0.3.5'
 gem 'faker',                    '2.11.0'
 gem 'will_paginate',            '3.3.0'
 gem 'bootstrap-will_paginate',  '1.0.0'
@@ -16,8 +16,8 @@ gem 'devise'
 gem 'bootsnap', '1.4.6', require: false
 
 group :development, :test do
-  gem 'sqlite3',  '1.4.2'
   gem 'byebug',   '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'sqlite3',  '1.4.2'
 end
 
 group :development do
