@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_04_13_120731) do
 
-  create_table "budgets", force: :cascade do |t|
+  create_table "expenses", force: :cascade do |t|
     t.string "title"
     t.string "comment"
     t.float "price"
