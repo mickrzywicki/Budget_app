@@ -1,29 +1,32 @@
 <h1>New Expense</h1>
 
-<%#= form_with model: @budget do |form| %>
-<!--  <div>-->
-<!--    <%#= form.label :title %><br>-->
-    <%#= form.text_field :title %>
-    <%# @budget.errors.full_messages_for(:title).each do |mes| %>
-<!--      <div><%#= mes %></div>-->
-    <%# end %>
-<!--  </div>-->
+<%= form_with model: @expense do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @expense.errors.full_messages_for(:name).each do |mes| %>
+      <div><%= mes %></div>
+    <% end %>
+  </div>
 
-<!--  <div>-->
-<!--    <%#= form.label :comment %><br>-->
-    <%#= form.text_field :comment %>
-<!--  </div>-->
+  <div>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %>
+    <% @expense.errors.full_messages_for(:price).each do |mes| %>
+      <div><%= mes %></div>
+    <% end %>
+  </div>
 
-<!--  <div>-->
-<!--    <%#= form.label :price %><br>-->
-    <%#= form.text_field :price %>
-    <%# @budget.errors.full_messages_for(:price).each do |mes| %>
-<!--      <div><%#= mes %></div>-->
-    <%# end %>
-<!--  </div>-->
+  <div>
+    <%= form.label :date %><br>
+    <%= form.text_field :date %>
+    <% @expense.errors.full_messages_for(:date).each do |mes| %>
+      <div><%= mes %></div>
+    <% end %>
+  </div>
 
-<!--  <div>-->
-    <%#= form.submit %>
-<!--  </div>-->
+  <div>
+    <%= form.submit %>
+  </div>
 
-<%# end %>
+<% end %>

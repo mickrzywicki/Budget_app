@@ -1,5 +1,13 @@
-<h1>Dashboard</h1>
+<h1>Expenses index</h1>
 
 <div class="container">
-
+  <ul>
+    <% @expenses.each do |exp| %>
+      <li>
+        <%= exp.name %>
+        <%= exp.price %>
+        <%= exp.date %>
+      </li>
+    <% end %>
+  </ul>
 </div>
