@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  get 'dashboards/index'
   devise_for :users
   resources :expenses
 
-  root 'expenses#index'
+  root 'dashboards#index'
 
 end
