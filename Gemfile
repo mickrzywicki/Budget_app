@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'bcrypt',                   '3.1.13'
-gem 'rails',                    '6.0.3.5'
+gem 'rails',                    '6.0.3.6'
 gem 'faker',                    '2.11.0'
 gem 'will_paginate',            '3.3.0'
 gem 'bootstrap-will_paginate',  '1.0.0'
@@ -18,6 +18,7 @@ gem 'bootsnap', '1.4.6', require: false
 group :development, :test do
   gem 'byebug',   '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3',  '1.4.2'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 group :development do
@@ -32,7 +33,6 @@ group :test do
   gem 'selenium-webdriver',       '3.142.7'
   gem 'webdrivers',               '4.6.0'
   gem 'rails-controller-testing', '1.0.4'
-  gem 'rspec'
   gem 'guard',                    '2.16.2'
   gem 'guard-minitest',           '2.4.6'
 end

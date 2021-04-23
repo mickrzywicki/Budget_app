@@ -8,4 +8,8 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
   end
 
+  def new
+    @expense = Expense.new
+  end
+
 end
