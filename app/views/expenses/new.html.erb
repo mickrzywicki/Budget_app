@@ -19,7 +19,7 @@
 
   <div>
     <%= form.label :date %><br>
-    <%= form.text_field :date %>
+    <%= form.date_field :date %>
     <% @expense.errors.full_messages_for(:date).each do |msg| %>
       <div><%= msg %></div>
     <% end %>

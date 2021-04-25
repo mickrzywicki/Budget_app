@@ -12,18 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_04_20_160649) do
 
-  create_table "budgets", force: :cascade do |t|
-    t.string "title"
-    t.string "comment"
-    t.float "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.date "date"
+    t.date "paid_on"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
