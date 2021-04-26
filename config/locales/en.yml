@@ -32,3 +32,9 @@
 en:
   hello: "Hello world"
   sign_up: "Sign Up"
+  sign_out: "Sign Out"
+  sign_in: "Sign In"
+  mail_error_valid: "Can't be in the future"
+  all_expenses: "All Expenses"
+  new_expense: "New Expense"
+  budget_app: "BudgetApp"
