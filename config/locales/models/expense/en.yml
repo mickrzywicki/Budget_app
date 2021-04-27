@@ -30,9 +30,4 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  sign_up: "Sign Up"
-  sign_out: "Sign Out"
-  sign_in: "Sign In"
-  budget_app: "BudgetApp"
-  dashboard: "Dashboard"
+  mail_error_valid: "Can't be in the future"

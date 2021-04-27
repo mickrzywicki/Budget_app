@@ -30,9 +30,7 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  sign_up: "Sign Up"
-  sign_out: "Sign Out"
-  sign_in: "Sign In"
-  budget_app: "BudgetApp"
-  dashboard: "Dashboard"
+  all_expenses: "All Expenses"
+  new_expense: "New Expense"
+  show_expense: "Show Expense"
+
