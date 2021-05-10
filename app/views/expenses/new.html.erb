@@ -1,4 +1,4 @@
-<h1><%= t('new_expense') %></h1>
+<h1><%= t('expenses.new') %></h1>
 
 <%= form_with model: @expense do |form| %>
   <div>
@@ -18,9 +18,9 @@
   </div>
 
   <div>
-    <%= form.label :date %><br>
-    <%= form.date_field :date %>
-    <% @expense.errors.full_messages_for(:date).each do |msg| %>
+    <%= form.label :paid_on %><br>
+    <%= form.date_field :paid_on %>
+    <% @expense.errors.full_messages_for(:paid_on).each do |msg| %>
       <div><%= msg %></div>
     <% end %>
   </div>

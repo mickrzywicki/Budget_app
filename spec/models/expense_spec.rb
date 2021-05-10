@@ -25,8 +25,7 @@ RSpec.describe Expense, type: :model do
 
   it 'is not valid without a paid_on date' do
     subject.paid_on = Date.tomorrow
-    # expect(subject).to raise_error(I18n.t('mail_error_valid'))
     expect(subject).to_not be_valid
-    expect(subject.errors.messages[:paid_on]).to eq [I18n.t('mail_error_valid')]
+    expect(subject.errors.messages[:paid_on]).to eq [I18n.t('activerecord.errors.messages.not_in_future')]
   end
 end

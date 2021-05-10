@@ -1,4 +1,4 @@
-<h1><%= t('all_expenses') %></h1>
+<h1><%= t('expenses.all') %></h1>
 
 <div class="container">
   <ul>
@@ -6,7 +6,7 @@
       <li>
         <%= exp.name %>
         <%= exp.price %>
-        <%= exp.date %>
+        <%= exp.paid_on %>
       </li>
     <% end %>
   </ul>
