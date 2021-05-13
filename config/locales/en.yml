@@ -30,4 +30,18 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  budget_app: "BudgetApp"
+  dashboard: "Dashboard"
+  sign:
+    up: "Sign Up"
+    out: "Sign Out"
+    in: "Sign In"
+  expenses:
+    all: "All Expenses"
+    new: "New Expense"
+    show: "Show Expense"
+  activerecord:
+    errors:
+      messages:
+        not_in_future: "Can't be in the future"
+
