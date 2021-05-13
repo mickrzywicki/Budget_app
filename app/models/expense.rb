@@ -9,6 +9,8 @@ class Expense < ApplicationRecord
 
 
   def paid_on_cannot_be_in_the_future
+    return if paid_on.nil?
+
     errors.add(:paid_on, :not_in_future) if paid_on > Date.today
   end
 end
