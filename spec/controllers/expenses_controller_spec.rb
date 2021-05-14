@@ -34,4 +34,23 @@ RSpec.describe ExpensesController, type: :controller do
       end
     end
   end
+
+  describe 'GET #new' do
+    let(:user) { create(:user) }
+
+    context 'from login user' do
+      before do
+        sign_in user
+        get :new
+      end
+
+      it 'should return 200:OK' do
+        expect(response).to have_http_status(:success)
+      end
+
+      it 'renders the new template' do
+        expect(response).to render_template('new')
+      end
+    end
+  end
 end
