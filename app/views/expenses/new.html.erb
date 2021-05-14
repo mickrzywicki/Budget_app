@@ -1,32 +1,32 @@
 <h1><%= t('expenses.new') %></h1>
 
 <%= form_with model: @expense do |form| %>
-  <div>
+  <div class="field form-group">
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Name of product" %>
     <% @expense.errors.full_messages_for(:name).each do |msg| %>
       <div><%= msg %></div>
     <% end %>
   </div>
 
-  <div>
+  <div class="field form-group">
     <%= form.label :price %><br>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, class: "form-control", placeholder: "Price of product in zlotys" %>
     <% @expense.errors.full_messages_for(:price).each do |msg| %>
       <div><%= msg %></div>
     <% end %>
   </div>
 
-  <div>
+  <div class="field form-group">
     <%= form.label :paid_on %><br>
-    <%= form.date_field :paid_on %>
+    <%= form.date_field :paid_on, value: Time.now.strftime('%Y-%m-%d'), class: "form-control", placeholder: "Date of purchase" %>
     <% @expense.errors.full_messages_for(:paid_on).each do |msg| %>
       <div><%= msg %></div>
     <% end %>
   </div>
-
-  <div>
-    <%= form.submit %>
+  </br>
+  <div class="actions">
+    <%= form.submit "Add Expense", class: "btn btn-secondary" %>
   </div>
 
 <% end %>
