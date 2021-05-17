@@ -5,22 +5,12 @@
 
     <%= form.label :name %><br>
     <%= form.text_field :name %>
-    <%# @expense.errors.full_messages_for(:name).each do |msg| %>
-<!--      <div><%#= msg %></div>-->
-      <%#= p msg %>
-    <%# end %>
 
     <%= form.label :price %><br>
     <%= form.text_field :price %>
-    <%# @expense.errors.full_messages_for(:price).each do |msg| %>
-<!--      <div><%#= msg %></div>-->
-    <%# end %>
 
     <%= form.label :paid_on %><br>
     <%= form.date_field :paid_on %>
-    <%# @expense.errors.full_messages_for(:paid_on).each do |msg| %>
-<!--      <div><%#= msg %></div>-->
-    <%# end %>
 
     <%= form.submit %>
 

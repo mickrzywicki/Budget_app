@@ -15,7 +15,7 @@ class ExpensesController < ApplicationController
       flash[:success] = t(:'flash.controller.good_create')
       redirect_to expenses_path
     else
-      flash.now[:alert] = t(:'flash.controller.bad_create')
+      flash.now[:danger] = t(:'flash.controller.bad_create')
       render :new
     end
   end
