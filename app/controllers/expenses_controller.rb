@@ -11,10 +11,11 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = Expense.new(expense_params)
-
     if @expense.save
+      flash[:success] = t(:'flash.controller.good_create')
       redirect_to expenses_path
     else
+      flash.now[:alert] = t(:'flash.controller.bad_create')
       render :new
     end
   end

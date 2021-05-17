@@ -1,32 +1,28 @@
 <h1><%= t('expenses.new') %></h1>
+<div>
+<%= form_with(model: @expense, local: true) do |form| %>
+  <%= render 'shared/error_messages', object: @expense %>
 
-<%= form_with model: @expense do |form| %>
-  <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
-    <% @expense.errors.full_messages_for(:name).each do |msg| %>
-      <div><%= msg %></div>
-    <% end %>
-  </div>
+    <%# @expense.errors.full_messages_for(:name).each do |msg| %>
+<!--      <div><%#= msg %></div>-->
+      <%#= p msg %>
+    <%# end %>
 
-  <div>
     <%= form.label :price %><br>
     <%= form.text_field :price %>
-    <% @expense.errors.full_messages_for(:price).each do |msg| %>
-      <div><%= msg %></div>
-    <% end %>
-  </div>
+    <%# @expense.errors.full_messages_for(:price).each do |msg| %>
+<!--      <div><%#= msg %></div>-->
+    <%# end %>
 
-  <div>
     <%= form.label :paid_on %><br>
     <%= form.date_field :paid_on %>
-    <% @expense.errors.full_messages_for(:paid_on).each do |msg| %>
-      <div><%= msg %></div>
-    <% end %>
-  </div>
+    <%# @expense.errors.full_messages_for(:paid_on).each do |msg| %>
+<!--      <div><%#= msg %></div>-->
+    <%# end %>
 
-  <div>
     <%= form.submit %>
-  </div>
 
 <% end %>
+</div>
