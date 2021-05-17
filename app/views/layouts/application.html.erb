@@ -10,18 +10,18 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="NavBar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <%= link_to t('budget_app'), root_path, id: "logo" %>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-end">
           <ul class="navbar-nav justify-content-end">
             <% if current_user %>
-              <li class="nav-item" id="liCurrUser">Current User: <%= current_user.email %></li>
+              <li class="nav-item">Current User: <%= current_user.email %></li>
               <li class="btn btn-light"><%= link_to t('sign_out'), destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <li class="nav-item" id="liCurrUser">Sign Up Now!</li>
-              <li class="btn btn-light" id="LinksSigning"><%= link_to t('sign_up'), new_user_registration_path %></li>
-              <li class="btn btn-light" id="LinksSigning"><%= link_to t('sign_in'), new_user_session_path %></li>
+              <li class="nav-item"><%= I18n.t('sign.up_now') %>></li>
+              <li class="btn btn-light"><%= link_to t('sign_up'), new_user_registration_path %></li>
+              <li class="btn btn-light"><%= link_to t('sign_in'), new_user_session_path %></li>
             <% end %>
           </ul>
         </div>

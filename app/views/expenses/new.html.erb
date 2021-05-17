@@ -3,7 +3,7 @@
 <%= form_with model: @expense do |form| %>
   <div class="field form-group">
     <%= form.label :name %><br>
-    <%= form.text_field :name, class: "form-control", placeholder: "Name of product" %>
+    <%= form.text_field :name, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_name') %>
     <% @expense.errors.full_messages_for(:name).each do |msg| %>
       <div><%= msg %></div>
     <% end %>
@@ -11,7 +11,7 @@
 
   <div class="field form-group">
     <%= form.label :price %><br>
-    <%= form.text_field :price, class: "form-control", placeholder: "Price of product in zlotys" %>
+    <%= form.text_field :price, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_price') %>
     <% @expense.errors.full_messages_for(:price).each do |msg| %>
       <div><%= msg %></div>
     <% end %>
@@ -19,14 +19,14 @@
 
   <div class="field form-group">
     <%= form.label :paid_on %><br>
-    <%= form.date_field :paid_on, value: Time.now.strftime('%Y-%m-%d'), class: "form-control", placeholder: "Date of purchase" %>
+    <%= form.date_field :paid_on, value: Time.now.strftime('%Y-%m-%d'), class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_paid_on') %>
     <% @expense.errors.full_messages_for(:paid_on).each do |msg| %>
       <div><%= msg %></div>
     <% end %>
   </div>
   </br>
   <div class="actions">
-    <%= form.submit "Add Expense", class: "btn btn-secondary" %>
+    <%= form.submit I18n.t('expenses.create.name_button_submit'), class: "btn btn-secondary" %>
   </div>
 
 <% end %>

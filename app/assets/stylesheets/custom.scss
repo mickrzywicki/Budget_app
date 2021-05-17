@@ -3,7 +3,6 @@
 /* universal */
 
 body {
-  //padding-top: 60px;
 }
 
 section {
@@ -73,16 +72,24 @@ li {
   }
 }
 
-#liCurrUser {
+.nav-item {
   margin-right: 15px;
   color: #fff;
 }
 
-#NavBar {
+.navbar {
   margin-bottom: 25px;
 }
 
-#LinksSigning {
+.collapse {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.btn {
+  margin-left: 10px;
+}
+
+.btn-secondary {
+  margin-top: 8px;
 }
