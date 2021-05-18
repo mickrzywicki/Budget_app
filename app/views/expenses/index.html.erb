@@ -1,13 +1,24 @@
 <h1><%= t('expenses.all') %></h1>
 
 <div class="container">
-  <ul>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><%= I18n.t('expenses.index.ordinal_number') %></th>
+        <th scope="col"><%= I18n.t('expenses.index.name') %></th>
+        <th scope="col"><%= I18n.t('expenses.index.price') %></th>
+        <th scope="col"><%= I18n.t('expenses.index.paid_on') %></th>
+      </tr>
+    </thead>
+    <tbody>
     <% @expenses.each do |exp| %>
-      <li>
-        <%= exp.name %>
-        <%= exp.price %>
-        <%= exp.paid_on %>
-      </li>
+      <tr>
+        <th scope="row"><%= exp.id %></th>
+        <td><%= exp.name %></td>
+        <td><%= exp.price %></td>
+        <td><%= exp.paid_on %></td>
+      </tr>
     <% end %>
-  </ul>
+    </tbody>
+  </table>
 </div>
