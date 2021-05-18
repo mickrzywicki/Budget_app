@@ -1,8 +1,6 @@
 <h1><%= t('expenses.new') %></h1>
 <div>
 <%= form_with(model: @expense, local: true) do |form| %>
-  <%= render 'shared/error_messages', object: @expense %>
-
   <div class="field form-group">
     <%= form.label :name %><br>
     <%= form.text_field :name, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_name') %>
