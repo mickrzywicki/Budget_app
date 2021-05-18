@@ -46,14 +46,15 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
       name_on_placeholder_password: "Password"
-      name_on_placeholder_email: "Password"
+      name_on_placeholder_email: "Email"
       name_on_button_submit: "Sign up"
+      after_min_password_character: "characters minimum"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
       name_on_placeholder_password: "Password"
-      name_on_placeholder_email: "Password"
+      name_on_placeholder_email: "Email"
       name_on_button_submit: "Log in"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."

@@ -14,7 +14,7 @@
       <div class="field form-group">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> <%= I18n.t('devise.registrations.after_min_password_character') %>>)</em>
         <% end %><br />
         <%= f.password_field :password, class: "form-control", placeholder: I18n.t('devise.registrations.name_on_placeholder_password'), autocomplete: "new-password" %>
       </div>
