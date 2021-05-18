@@ -1,0 +1,17 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to t('budget_app'), root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <li class="navbar-text">Current User: <%= current_user.email %></li>
+          <li><%= link_to t('sign_out'), destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class="navbar-text"></li>
+          <li><%= link_to t('sign_up'), new_user_registration_path %></li>
+          <li><%= link_to t('sign_in'), new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

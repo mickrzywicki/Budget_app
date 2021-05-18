@@ -9,4 +9,20 @@ class ExpensesController < ApplicationController
     @expense = Expense.new
   end
 
+  def create
+    @expense = Expense.new(expense_params)
+    if @expense.save
+      flash[:success] = t(:'flash.controller.good_create')
+      redirect_to expenses_path
+    else
+      flash.now[:danger] = t(:'flash.controller.bad_create')
+      render :new
+    end
+  end
+
+  private
+
+  def expense_params
+    params.require(:expense).permit(:name, :price, :paid_on)
+  end
 end

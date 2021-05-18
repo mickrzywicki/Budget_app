@@ -28,6 +28,12 @@
       </div>
     </nav>
     <div class="container">
+      <% flash.each do |type, msg| %>
+        <div class="alert alert-<%=type%>"><%= msg %></div>
+        <%= puts msg%>
+      <% end %>
+    </div>
+    <div class="container">
       <%= yield %>
     </div>
   </body>

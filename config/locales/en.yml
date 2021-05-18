@@ -55,4 +55,8 @@ en:
     errors:
       messages:
         not_in_future: "Can't be in the future"
+  flash:
+    controller:
+      good_create: "The record was created successfully!"
+      bad_create: "The record was not created, try again!"
 
