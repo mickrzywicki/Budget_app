@@ -103,7 +103,7 @@ RSpec.describe ExpensesController, type: :controller do
         expect(flash[:danger]).to eq I18n.t('flash.controller.bad_create')
       end
 
-      it 'has not redirect to /expense' do
+      it 'render new template' do
         expect(response).to render_template('expenses/new')
       end
     end
