@@ -19,7 +19,9 @@ gem 'will_paginate',            '3.3.0'
 group :development, :test do
   gem 'byebug',         '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 5.0.0'
+  gem "rubocop",        "~> 1.12"
+  gem "bundler-audit",  "~> 0.8.0"
+  gem 'rspec-rails',    '~> 5.0.0'
   gem 'sqlite3',        '1.4.2'
 end
 
