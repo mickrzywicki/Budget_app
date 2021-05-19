@@ -9,11 +9,11 @@
     <% end %>
   </div>
 
-  <div class="field form-group">
+  <div class="field form-group has-validation">
     <%= form.label :price %>
     <%= form.text_field :price, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_price') %>
     <% @expense.errors.full_messages_for(:price).each do |msg| %>
-      <span><%= msg %></span>
+      <div class="invalid-feedback"><%= msg %></div>
     <% end %>
   </div>
 
