@@ -20,6 +20,23 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def edit
+    @expense = Expense.find(params[:id])
+  end
+
+  def update
+    @expense = Expense.find(params[:id])
+
+    if @expense.update(expense_params)
+      flash[:success] = t(:'flash.controller.good_update')
+      redirect_to expenses_path
+    else
+      flash.now[:danger] = t(:'flash.controller.bad_update')
+      render :edit
+    end
+  end
+
+
   private
 
   def expense_params
