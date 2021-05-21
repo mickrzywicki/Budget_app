@@ -18,7 +18,9 @@
         <td><%= exp.name %></td>
         <td><%= exp.price %></td>
         <td><%= exp.paid_on %></td>
-        <td><%= link_to t('expenses.index.edit'), edit_expense_path(exp.id)%></td>
+        <td>
+          <%= link_to t('expenses.index.edit'), edit_expense_path(exp.id), class: "btn btn-outline-primary"%>
+        </td>
       </tr>
     <% end %>
     </tbody>
