@@ -165,5 +165,28 @@ RSpec.describe ExpensesController, type: :controller do
         expect(Expense.count).to eq(1)
       end
     end
+
+    context 'from login user and invalid attributes' do
+      before do
+        sign_in user
+        patch :update,
+              params: {
+                id: expense.id,
+                expense: {
+                  name: 'T',
+                  price: 3.787,
+                  paid_on: Date.tomorrow
+                }
+              }
+      end
+
+      it 'has invalid name' do
+        expect(flash[:danger]).to eq I18n.t('flash.controller.bad_update')
+      end
+
+      it 'render new template' do
+        expect(response).to render_template('expenses/edit')
+      end
+    end
   end
 end
