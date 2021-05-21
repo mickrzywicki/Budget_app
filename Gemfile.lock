@@ -312,7 +312,7 @@ DEPENDENCIES
   rubocop (~> 1.12)
   sass-rails (= 6.0.0)
   selenium-webdriver (= 3.142.7)
-  spring (= 2.1.1)
+  spring (~> 2.1.1)
   spring-watcher-listen (= 2.0.1)
   sqlite3 (= 1.4.2)
   turbolinks (= 5.2.1)

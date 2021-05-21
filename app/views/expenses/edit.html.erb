@@ -1,0 +1,32 @@
+<h1><%= t('expenses.edit') %></h1>
+<div>
+<%= form_with(model: @expense, local: true) do |form| %>
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_name') %>
+    <% @expense.errors.full_messages_for(:name).each do |msg| %>
+      <div class="invalid-feedback"><%= msg %></div>
+    <% end %>
+  </div>
+
+  <div class="field form-group has-validation">
+    <%= form.label :price %>
+    <%= form.text_field :price, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_price') %>
+    <% @expense.errors.full_messages_for(:price).each do |msg| %>
+      <div class="invalid-feedback"><%= msg %></div>
+    <% end %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :paid_on %>
+    <%= form.date_field :paid_on, value: Time.now.strftime('%Y-%m-%d'), class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_paid_on') %>
+    <% @expense.errors.full_messages_for(:paid_on).each do |msg| %>
+      <div class="invalid-feedback"><%= msg %></div>
+    <% end %>
+  </div>
+  </br>
+  <div class="actions">
+    <%= form.submit I18n.t('expenses.update.name_button_submit'), class: "btn btn-secondary" %>
+  </div>
+<% end %>
+</div>
