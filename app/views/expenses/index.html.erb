@@ -24,23 +24,7 @@
             <%= t('expenses.index.destroy') %>
           </button>
         </td>
-        <div class="modal fade" id="exampleModal<%= exp.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                Are you sure to delete?
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <%= link_to 'Delete', expense_path(exp.id), method: :delete, class: 'btn btn-outline-danger' %>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render partial: 'modal', locals: { idx: exp } %>
       </tr>
     <% end %>
     </tbody>
