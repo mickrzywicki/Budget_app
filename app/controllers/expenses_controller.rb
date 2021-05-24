@@ -36,6 +36,12 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def destroy
+    @expense = Expense.find(params[:id])
+    @expense.destroy
+    flash[:success] = t('flash.controller.good_delete')
+    redirect_to expenses_path
+  end
 
   private
 

@@ -48,6 +48,7 @@ en:
       price: "Price"
       paid_on: "Paid on"
       edit: "Edit"
+      destroy: "Delete"
     create:
       placeholder_on_name: "Name of product"
       placeholder_on_price: "Price of product in zlotys"
@@ -55,6 +56,8 @@ en:
       name_button_submit: "Add Expense"
     update:
       name_button_submit: "Update Expense"
+    delete:
+      confirmation: "Are you sure?"
   activerecord:
     errors:
       messages:
@@ -65,4 +68,5 @@ en:
       bad_create: "The record was not created, try again!"
       good_update: "The record was updated successfully!"
       bad_update: "The record was not updated, try again!"
-
+      good_delete: "The record was deleted successfully!"
+      bad_delete: "The record was not deleted, try again!"

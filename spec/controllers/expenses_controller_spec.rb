@@ -135,7 +135,7 @@ RSpec.describe ExpensesController, type: :controller do
     let(:user) { create(:user) }
     let(:expense) { create(:expense) }
 
-    context 'from login user' do
+    context 'from login user and valid attributes' do
       before do
         sign_in user
         patch :update,
@@ -186,6 +186,37 @@ RSpec.describe ExpensesController, type: :controller do
 
       it 'render new template' do
         expect(response).to render_template('expenses/edit')
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    let(:user) { create(:user) }
+    let(:expense) { create(:expense) }
+
+    context 'from login user and valid attributes' do
+      before do
+        sign_in user
+        delete :destroy,
+               params: {
+                 id: expense.id
+               }
+      end
+
+      it 'successful redirect after DELETE' do
+        expect(response).to redirect_to('/expenses')
+      end
+
+      it 'create flash message' do
+        expect(flash[:success]).to eq I18n.t('flash.controller.good_delete')
+      end
+
+      it 'has 302:Redirect' do
+        expect(response).to have_http_status(:redirect)
+      end
+
+      it 'delete record from database with success' do
+        expect(Expense.count).to eq(0)
       end
     end
   end
