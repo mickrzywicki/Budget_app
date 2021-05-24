@@ -3,13 +3,13 @@
 <div class="container">
   <table class="table">
     <thead>
-      <tr>
-        <th scope="col"><%= I18n.t('expenses.index.ordinal_number') %></th>
-        <th scope="col"><%= I18n.t('expenses.index.name') %></th>
-        <th scope="col"><%= I18n.t('expenses.index.price') %></th>
-        <th scope="col"><%= I18n.t('expenses.index.paid_on') %></th>
-        <th></th>
-      </tr>
+    <tr>
+      <th scope="col"><%= I18n.t('expenses.index.ordinal_number') %></th>
+      <th scope="col"><%= I18n.t('expenses.index.name') %></th>
+      <th scope="col"><%= I18n.t('expenses.index.price') %></th>
+      <th scope="col"><%= I18n.t('expenses.index.paid_on') %></th>
+      <th></th>
+    </tr>
     </thead>
     <tbody>
     <% @expenses.each do |exp| %>
@@ -19,12 +19,32 @@
         <td><%= exp.price %></td>
         <td><%= exp.paid_on %></td>
         <td>
-          <%= link_to t('expenses.index.edit'), edit_expense_path(exp.id), class: "btn btn-outline-primary"%>
-          <%= link_to t('expenses.index.destroy'), expense_path(exp.id), method: :delete,
-                        data: { confirm: I18n.t('expenses.delete.confirmation') }, class: "btn btn-outline-danger"%>
+          <%= link_to t('expenses.index.edit'), edit_expense_path(exp.id), class: "btn btn-outline-primary" %>
+          <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <%= t('expenses.index.destroy') %>
+            <% @expens = exp %>
+          </button>
         </td>
       </tr>
     <% end %>
     </tbody>
   </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to delete?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <%= link_to 'Delete', expense_path(@expens.id), method: :delete, class: 'btn btn-outline-danger' %>
+      </div>
+    </div>
+  </div>
 </div>
