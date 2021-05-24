@@ -215,7 +215,7 @@ RSpec.describe ExpensesController, type: :controller do
         expect(response).to have_http_status(:redirect)
       end
 
-      it 'save record to database with success' do
+      it 'delete record from database with success' do
         expect(Expense.count).to eq(0)
       end
     end

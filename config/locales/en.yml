@@ -56,6 +56,8 @@ en:
       name_button_submit: "Add Expense"
     update:
       name_button_submit: "Update Expense"
+    delete:
+      confirmation: "Are you sure?"
   activerecord:
     errors:
       messages:

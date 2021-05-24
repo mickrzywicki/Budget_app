@@ -21,7 +21,7 @@
         <td>
           <%= link_to t('expenses.index.edit'), edit_expense_path(exp.id), class: "btn btn-outline-primary"%>
           <%= link_to t('expenses.index.destroy'), expense_path(exp.id), method: :delete,
-                      data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger"%>
+                        data: { confirm: I18n.t('expenses.delete.confirmation') }, class: "btn btn-outline-danger"%>
         </td>
       </tr>
     <% end %>
