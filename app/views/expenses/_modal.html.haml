@@ -1,0 +1,11 @@
+.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :id => "exampleModal#{idx.id}", :tabindex => "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h5#exampleModalLabel.modal-title= I18n.t('expenses.index.destroy')
+        %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+      .modal-body
+        = I18n.t('expenses.delete.modal.confirmation')
+      .modal-footer
+        %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"}= I18n.t('expenses.index.close')
+        = link_to t('expenses.index.destroy'), expense_path(idx.id), method: :delete, class: 'btn btn-outline-danger'
