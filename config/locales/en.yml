@@ -49,6 +49,7 @@ en:
       paid_on: "Paid on"
       edit: "Edit"
       destroy: "Delete"
+      close: "Close"
     create:
       placeholder_on_name: "Name of product"
       placeholder_on_price: "Price of product in zlotys"
@@ -58,6 +59,8 @@ en:
       name_button_submit: "Update Expense"
     delete:
       confirmation: "Are you sure?"
+      modal:
+        confirmation: "Are you sure to delete?"
   activerecord:
     errors:
       messages:
