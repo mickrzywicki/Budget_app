@@ -24,7 +24,7 @@
             <%= t('expenses.index.destroy') %>
           </button>
         </td>
-        <%= render partial: 'modal', locals: { idx: exp } %>
+        <%= render partial: 'modal', locals: { expense_modal: exp } %>
       </tr>
     <% end %>
     </tbody>

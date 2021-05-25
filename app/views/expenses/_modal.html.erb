@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal<%= idx.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal<%= expense_modal.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -10,7 +10,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= I18n.t('expenses.index.close') %></button>
-        <%= link_to t('expenses.index.destroy'), expense_path(idx.id), method: :delete, class: 'btn btn-outline-danger' %>
+        <%= link_to t('expenses.index.destroy'), expense_path(expense_modal.id), method: :delete, class: 'btn btn-outline-danger' %>
       </div>
     </div>
   </div>
