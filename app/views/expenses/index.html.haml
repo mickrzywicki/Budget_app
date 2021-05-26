@@ -19,4 +19,4 @@
             = link_to t('expenses.index.edit'), edit_expense_path(exp.id), class: "btn btn-outline-primary"
             %button.btn.btn-outline-danger{"data-bs-target" => "#exampleModal#{exp.id}", "data-bs-toggle" => "modal", :type => "button"}
               = t('expenses.index.destroy')
-          = render partial: 'modal', locals: { idx: exp }
+          = render partial: 'modal', locals: { expense_modal: exp }
