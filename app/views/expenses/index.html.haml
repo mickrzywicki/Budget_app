@@ -7,24 +7,24 @@
         %th{:scope => "col"}= I18n.t('expenses.index.name')
         %th{:scope => "col"}= I18n.t('expenses.index.price')
         %th{:scope => "col"}= I18n.t('expenses.index.paid_on')
-        %th{:scope => "col"}= "Actions"
+        %th{:scope => "col"}= I18n.t('expenses.sort.action')
         %th{:scope => "col"}
           .dropdown
             %button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle{"aria-expanded": "false", "data-bs-toggle": "dropdown", type: "button"}
-              Sort by:
+              = I18n.t('expenses.sort.by')
             %ul.dropdown-menu{"aria-labelledby": "dropdownMenuButton1"}
               %li
                 = sortable "name"
               %li
                 = sortable "price"
               %li
-                = link_to "By oldest.", { sort: "paid_on", direction: "asc" }, { class: "btn" }
+                = link_to t('expenses.sort.oldest'), { sort: "paid_on", direction: "asc" }, { class: "btn" }
               %li
-                = link_to "By newest.", { sort: "paid_on", direction: "desc" }, { class: "btn" }
+                = link_to t('expenses.sort.newest'), { sort: "paid_on", direction: "desc" }, { class: "btn" }
               %li
                 %hr.dropdown-divider
               %li
-                = link_to "By created by.", expenses_path, {class: "btn"}
+                = link_to t('expenses.sort.created_by'), expenses_path, {class: "btn"}
     %tbody
       - @expenses.each_with_index do |exp, idx|
         %tr
