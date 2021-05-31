@@ -1,0 +1,27 @@
+= form_for(edit_expense_modal, validate: true, local: true) do |form|
+  .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "editModalLabel", :id => "editModal#{edit_expense_modal.id}", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %h5#editModalLabel.modal-title= I18n.t('expenses.index.edit')
+          %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "modal", :type => "button"}
+        .modal-body
+          .field.form-group.has-validation
+            = form.label :name
+            = form.text_field :name, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_name')
+            - edit_expense_modal.errors.full_messages_for(:name).each do |msg|
+              .invalid-feedback= msg
+          .field.form-group.has-validation
+            = form.label :price
+            = form.text_field :price, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_price')
+            - edit_expense_modal.errors.full_messages_for(:price).each do |msg|
+              .invalid-feedback= msg
+          .field.form-group.has-validation
+            = form.label :paid_on
+            = form.date_field :paid_on, value: Time.now.strftime('%Y-%m-%d'), class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_paid_on')
+            - edit_expense_modal.errors.full_messages_for(:paid_on).each do |msg|
+              .invalid-feedback= msg
+        .modal-footer
+          .actions
+            = form.submit t('expenses.update.name_button_submit'), class: "btn btn-secondary"
+            %button.btn.btn-secondary{"data-bs-dismiss" => "modal", :type => "button"}= I18n.t('expenses.index.close')
