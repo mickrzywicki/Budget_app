@@ -32,7 +32,7 @@ class ExpensesController < ApplicationController
       redirect_to expenses_path
     else
       flash.now[:danger] = t(:'flash.controller.bad_update')
-      render "expenses/_edit_modal", locals: { edit_expense_modal: @expense }
+      render :edit
     end
   end
 
