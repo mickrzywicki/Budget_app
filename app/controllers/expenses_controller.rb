@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @expenses = Expense.order(sort_column + " " + sort_direction)
+    @expenses = Expense.order(sort_column => sort_direction)
   end
 
   def new

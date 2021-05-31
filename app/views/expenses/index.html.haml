@@ -18,9 +18,7 @@
               %li
                 = sortable "price"
               %li
-                = link_to t('expenses.sort.oldest'), { sort: "paid_on", direction: "asc" }, { class: "btn" }
-              %li
-                = link_to t('expenses.sort.newest'), { sort: "paid_on", direction: "desc" }, { class: "btn" }
+                = sortable "paid_on"
               %li
                 %hr.dropdown-divider
               %li
