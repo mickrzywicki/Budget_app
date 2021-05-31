@@ -1,8 +1,9 @@
 class ExpensesController < ApplicationController
   before_action :authenticate_user!
+  helper_method :sort_column, :sort_direction
 
   def index
-    @expenses = Expense.all
+    @expenses = Expense.order(sort_column => sort_direction)
   end
 
   def new
@@ -47,5 +48,13 @@ class ExpensesController < ApplicationController
 
   def expense_params
     params.require(:expense).permit(:name, :price, :paid_on)
+  end
+
+  def sort_column
+    Expense.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

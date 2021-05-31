@@ -61,6 +61,12 @@ en:
       confirmation: "Are you sure?"
       modal:
         confirmation: "Are you sure to delete?"
+    sort:
+      action: "Actions"
+      by: "Sort by:"
+      oldest: "By oldest."
+      newest: "By newest."
+      created_by: "By created by."
   activerecord:
     errors:
       messages:
