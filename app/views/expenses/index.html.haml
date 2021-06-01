@@ -10,19 +10,15 @@
         %th{:scope => "col"}= I18n.t('expenses.sort.action')
         %th{:scope => "col"}
           .dropdown
-            %button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle{"aria-expanded": "false", "data-bs-toggle": "dropdown", type: "button"}
+            %button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.justify-content-end{"aria-expanded": "false", "data-bs-toggle": "dropdown", type: "button"}
               = I18n.t('expenses.sort.by')
-            %ul.dropdown-menu{"aria-labelledby": "dropdownMenuButton1"}
-              %li
-                = sortable "name"
-              %li
-                = sortable "price"
-              %li
-                = sortable "paid_on"
-              %li
-                %hr.dropdown-divider
-              %li
-                = link_to t('expenses.sort.created_by'), expenses_path, {class: "btn"}
+              %ul.dropdown-menu{"aria-labelledby": "dropdownMenuButton1"}
+                %li= sortable "name"
+                %li= sortable "price"
+                %li= sortable "paid_on"
+                %li
+                  %hr.dropdown-divider
+                %li= link_to t('expenses.sort.created_by'), expenses_path, {class: "btn"}
     %tbody
       - @expenses.each_with_index do |exp, idx|
         %tr
@@ -35,3 +31,5 @@
             %button.btn.btn-outline-danger{"data-bs-target" => "#exampleModal#{exp.id}", "data-bs-toggle" => "modal", :type => "button"}
               = t('expenses.index.destroy')
           = render partial: 'modal', locals: { expense_modal: exp }
+  .container
+    = paginate @expenses
