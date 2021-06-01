@@ -67,6 +67,11 @@ en:
       oldest: "By oldest."
       newest: "By newest."
       created_by: "By created by."
+  category:
+    new: "New Category"
+    create:
+      placeholder_on_name: "Name of category"
+      name_button_submit: "Add Category"
   activerecord:
     errors:
       messages:
