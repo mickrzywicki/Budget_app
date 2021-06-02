@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
-  subject {
-    described_class.new(name: "Cokolwiek",
+  subject do
+    described_class.new(name: 'Something',
                         price: 9.99,
                         paid_on: Date.today)
-  }
+  end
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid

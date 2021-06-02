@@ -1,0 +1,8 @@
+= form_with(model: @category, local: true) do |form|
+  .field.form-group.has-validation
+    = form.label :name
+    = form.text_field :name, class: "form-control", placeholder: I18n.t('category.create.placeholder_on_name')
+    - @category.errors.full_messages_for(:name).each do |msg|
+      .invalid-feedback= msg
+  .actions
+    = form.submit yield(:button_text), class: "btn btn-secondary"
