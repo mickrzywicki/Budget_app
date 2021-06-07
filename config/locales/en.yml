@@ -68,10 +68,33 @@ en:
       newest: "By newest."
       created_by: "By created by."
   category:
+    all: "All Categories"
     new: "New Category"
+    show: "Show Categories"
+    edit: "Edit Category"
+    index:
+      ordinal_number: "#"
+      name: "Name"
+      price: "Price"
+      paid_on: "Paid on"
+      edit: "Edit"
+      destroy: "Delete"
+      close: "Close"
     create:
       placeholder_on_name: "Name of category"
       name_button_submit: "Add Category"
+    update:
+      name_button_submit: "Update Category"
+    delete:
+      confirmation: "Are you sure?"
+      modal:
+        confirmation: "Are you sure to delete?"
+    sort:
+      action: "Actions"
+      by: "Sort by:"
+      oldest: "By oldest."
+      newest: "By newest."
+      created_by: "By created by."
   activerecord:
     errors:
       messages:
