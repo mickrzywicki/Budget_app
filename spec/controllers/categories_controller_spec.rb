@@ -34,7 +34,7 @@ RSpec.describe CategoriesController, type: :controller do
       end
 
       it 'successful redirect after POST' do
-        expect(response).to redirect_to('/expenses')
+        expect(response).to redirect_to('/categories')
       end
 
       it 'create flash message' do
