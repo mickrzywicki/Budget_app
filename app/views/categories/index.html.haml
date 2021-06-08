@@ -1,0 +1,20 @@
+%h1= t('category.all')
+.container
+  %table.table
+    %thead
+      %tr
+        %th{:scope => "col"}= I18n.t('category.index.ordinal_number')
+        %th{:scope => "col"}= I18n.t('category.index.name')
+        %th{:scope => "col"}
+    %tbody
+      - @categories.each_with_index do |cat, idx|
+        %tr
+          %th{:scope => "row"}= idx + 1
+          %td= cat.name
+          %td
+            = link_to t('category.index.edit'), edit_category_path(cat.id), class: "btn btn-outline-primary"
+            %button.btn.btn-outline-danger{"data-bs-target" => "#categoryModal#{cat.id}", "data-bs-toggle" => "modal", :type => "button"}
+              = t('category.index.destroy')
+          = render partial: 'modal', locals: { category_modal: cat }
+  .container
+    = paginate @categories
