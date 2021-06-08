@@ -70,4 +70,35 @@ RSpec.describe CategoriesController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    let(:user) { create(:user) }
+    let(:category) { create(:category) }
+
+    context 'from login user and valid attributes' do
+      before do
+        sign_in user
+        delete :destroy,
+               params: {
+                 id: category.id
+               }
+      end
+
+      it 'successful redirect after DELETE' do
+        expect(response).to redirect_to('/categories')
+      end
+
+      it 'create flash message' do
+        expect(flash[:success]).to eq I18n.t('flash.controller.good_delete')
+      end
+
+      it 'has 302:Redirect' do
+        expect(response).to have_http_status(:redirect)
+      end
+
+      it 'delete record from database with success' do
+        expect(Category.count).to eq(0)
+      end
+    end
+  end
 end
