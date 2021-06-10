@@ -59,16 +59,20 @@ RSpec.describe ExpensesController, type: :controller do
   # Testing 'create' template with POST action
   describe 'POST #create' do
     let (:user) { create(:user) }
+    let (:category) { create(:category) }
 
     context 'from login user and valid attributes' do
       before do
         sign_in user
         post :create,
-             params: { expense: {
-               name: 'Tomato',
-               price: 2.56,
-               paid_on: Date.today
-             } }
+             params: {
+               expense: {
+                 name: 'Tomato',
+                 price: 2.56,
+                 paid_on: Date.today,
+                 category_id: category.id
+               }
+             }
       end
 
       it 'successful redirect after POST' do
