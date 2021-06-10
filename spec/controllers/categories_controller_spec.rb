@@ -111,8 +111,7 @@ RSpec.describe CategoriesController, type: :controller do
         expect(response).to redirect_to('/categories')
       end
 
-      
-      it '0' do
+      it 'create flash message' do
         expect(flash[:success]).to eq I18n.t('flash.controller.good_update')
       end
 

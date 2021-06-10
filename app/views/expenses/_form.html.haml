@@ -1,4 +1,4 @@
-= form_with(model: @expense, local: true) do |form|
+= form_with(model: @expense, url: [@category, @expense], local: true) do |form|
   .field.form-group.has-validation
     = form.label :name
     = form.text_field :name, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_name')
@@ -14,5 +14,10 @@
     = form.date_field :paid_on, value: Time.now.strftime('%Y-%m-%d'), class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_paid_on')
     - @expense.errors.full_messages_for(:paid_on).each do |msg|
       .invalid-feedback= msg
+  .field.form-group
+    = form.label t('category.title')
+    .form.form-group
+      = form.select :category_id, options_for_select(prepare_data_for_selector(Category.all)), {}, { class: "form-select" }
+
   .actions
     = form.submit yield(:button_text), class: "btn btn-secondary"

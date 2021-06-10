@@ -42,6 +42,7 @@ en:
     new: "New Expense"
     show: "Show Expense"
     edit: "Edit Expense"
+    category: "Category"
     index:
       ordinal_number: "#"
       name: "Name"
@@ -67,7 +68,9 @@ en:
       oldest: "By oldest."
       newest: "By newest."
       created_by: "By created by."
+    categories: "Categories"
   category:
+    title: "Categories"
     all: "All Categories"
     new: "New Category"
     show: "Show Categories"
