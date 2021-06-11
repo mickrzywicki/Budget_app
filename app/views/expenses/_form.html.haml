@@ -1,4 +1,4 @@
-= form_with(model: @expense, url: [@category, @expense], local: true) do |form|
+= form_with(model: @expense, url: [@expense], local: true) do |form|
   .field.form-group.has-validation
     = form.label :name
     = form.text_field :name, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_name')

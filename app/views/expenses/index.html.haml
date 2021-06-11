@@ -23,7 +23,7 @@
     %tbody
       - @expenses.each_with_index do |exp, idx|
         %tr
-          %th{:scope => "row"}= idx + (params[:page] ? (params[:page].to_i * 10) - 10 : 0) + 1
+          %th{:scope => "row"}= idx + index_in_records_table(params[:page]) + 1
           %td= exp.name
           %td= exp.price
           %td= exp.paid_on
