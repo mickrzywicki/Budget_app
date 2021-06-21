@@ -1,0 +1,23 @@
+= form_with(model: @expense, url: [@expense], local: true) do |form|
+  .field.form-group.has-validation
+    = form.label :name
+    = form.text_field :name, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_name')
+    - @expense.errors.full_messages_for(:name).each do |msg|
+      .invalid-feedback= msg
+  .field.form-group.has-validation
+    = form.label :price
+    = form.text_field :price, class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_price')
+    - @expense.errors.full_messages_for(:price).each do |msg|
+      .invalid-feedback= msg
+  .field.form-group.has-validation
+    = form.label :paid_on
+    = form.date_field :paid_on, value: Time.now.strftime('%Y-%m-%d'), class: "form-control", placeholder: I18n.t('expenses.create.placeholder_on_paid_on')
+    - @expense.errors.full_messages_for(:paid_on).each do |msg|
+      .invalid-feedback= msg
+  .field.form-group
+    = form.label t('category.title')
+    .form.form-group
+      = form.select :category_id, options_for_select(prepare_data_for_selector(Category.all), selected: @expense.category.id), {}, { class: "form-select" }
+
+  .actions
+    = form.submit yield(:button_text), class: "btn btn-secondary"
