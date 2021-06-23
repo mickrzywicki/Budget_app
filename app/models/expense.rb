@@ -1,5 +1,6 @@
 class Expense < ApplicationRecord
   belongs_to :category
+  belongs_to :user
   validates :name, :price, :paid_on, presence: true
   validates :name, length: { minimum: 2, maximum: 100 }
   validates :price, format: { with: /\A\d+(\.\d{1,2})?\Z/, allow_blank: true },

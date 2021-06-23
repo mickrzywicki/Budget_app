@@ -49,7 +49,7 @@ class ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:name, :price, :paid_on, :category_id)
+    params.require(:expense).permit(:name, :price, :paid_on, :category_id, :user_id)
   end
 
   def sort_column

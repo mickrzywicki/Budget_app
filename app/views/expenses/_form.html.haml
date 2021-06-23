@@ -18,6 +18,8 @@
     = form.label t('category.title')
     .form.form-group
       = form.select :category_id, options_for_select(prepare_data_for_selector(@categories), selected: @expense.category&.id), {}, { class: "form-select" }
+  .field.form-group.has-validation
+    = form.number_field :user_id, id: :expense_user_id, class: "form-control", value: current_user.id, type: :hidden
 
   .actions
     = form.submit yield(:button_text), class: "btn btn-secondary"

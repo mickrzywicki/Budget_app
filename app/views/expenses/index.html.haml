@@ -7,8 +7,9 @@
         %th{:scope => "col"}= I18n.t('expenses.index.name')
         %th{:scope => "col"}= I18n.t('expenses.index.price')
         %th{:scope => "col"}= I18n.t('expenses.index.paid_on')
-        %th{:scope => "col"}= I18n.t('expenses.sort.action')
         %th{:scope => "col"}= I18n.t('expenses.category')
+        %th{:scope => "col"}= I18n.t('expenses.user')
+        %th{:scope => "col"}= I18n.t('expenses.sort.action')
         %th{:scope => "col"}
           .dropdown
             %button#dropdownMenuButton1.btn.btn-secondary.dropdown-toggle.justify-content-end{"aria-expanded": "false", "data-bs-toggle": "dropdown", type: "button"}
@@ -28,6 +29,7 @@
           %td= exp.price
           %td= exp.paid_on
           %td= exp.category.name
+          %td= exp.user.email
           %td
             = link_to t('expenses.index.edit'), edit_expense_path(exp.id), class: "btn btn-outline-primary"
             %button.btn.btn-outline-danger{"data-bs-target" => "#exampleModal#{exp.id}", "data-bs-toggle" => "modal", :type => "button"}
