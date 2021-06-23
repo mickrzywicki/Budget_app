@@ -17,7 +17,7 @@
   .field.form-group
     = form.label t('category.title')
     .form.form-group
-      = form.select :category_id, options_for_select(prepare_data_for_selector(Category.all)), {}, { class: "form-select" }
+      = form.select :category_id, options_for_select(prepare_data_for_selector(@categories), selected: @expense.category&.id), {}, { class: "form-select" }
 
   .actions
     = form.submit yield(:button_text), class: "btn btn-secondary"
