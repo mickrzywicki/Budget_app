@@ -70,7 +70,8 @@ RSpec.describe ExpensesController, type: :controller do
                  name: 'Tomato',
                  price: 2.56,
                  paid_on: Date.today,
-                 category_id: category.id
+                 category_id: category.id,
+                 user_id: user.id
                }
              }
       end
