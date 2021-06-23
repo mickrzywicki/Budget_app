@@ -8,6 +8,7 @@ class ExpensesController < ApplicationController
 
   def new
     @expense = Expense.new
+    @categories = Category.all
   end
 
   def create
@@ -23,6 +24,7 @@ class ExpensesController < ApplicationController
 
   def edit
     @expense = Expense.find(params[:id])
+    @categories = Category.all
   end
 
   def update
