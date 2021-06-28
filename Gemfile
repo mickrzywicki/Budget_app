@@ -40,6 +40,7 @@ group :test do
   gem 'rails-controller-testing', '1.0.4'
   gem 'selenium-webdriver',       '3.142.7'
   gem 'webdrivers',               '4.6.0'
+  gem 'shoulda-matchers',         '~> 4.0'
 end
 
 group :production do

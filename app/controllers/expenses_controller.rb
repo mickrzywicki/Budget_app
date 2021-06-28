@@ -12,7 +12,7 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    @expense = Expense.new(expense_params)
+    @expense = current_user.expenses.new(expense_params)
     if @expense.save
       flash[:success] = t(:'flash.controller.good_create')
       redirect_to expenses_path
@@ -49,7 +49,7 @@ class ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:name, :price, :paid_on, :category_id, :user_id)
+    params.require(:expense).permit(:name, :price, :paid_on, :category_id)
   end
 
   def sort_column
