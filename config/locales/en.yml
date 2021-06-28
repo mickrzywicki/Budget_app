@@ -43,6 +43,7 @@ en:
     show: "Show Expense"
     edit: "Edit Expense"
     category: "Category"
+    user: "User"
     index:
       ordinal_number: "#"
       name: "Name"
