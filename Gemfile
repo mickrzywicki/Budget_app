@@ -16,6 +16,7 @@ gem 'webpacker',                '4.3.0'
 gem 'will_paginate',            '3.3.0'
 gem 'haml-rails'
 gem 'kaminari'
+gem 'pundit'
 
 group :development, :test do
   gem 'byebug',         '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
