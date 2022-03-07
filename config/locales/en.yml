@@ -30,4 +30,84 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  budget_app: "BudgetApp"
+  dashboard: "Dashboard"
+  sign:
+    up: "Sign Up"
+    out: "Sign Out"
+    in: "Sign In"
+    up_now: "Sign Up Now!"
+  expenses:
+    all: "All Expenses"
+    new: "New Expense"
+    show: "Show Expense"
+    edit: "Edit Expense"
+    category: "Category"
+    user: "User"
+    index:
+      ordinal_number: "#"
+      name: "Name"
+      price: "Price"
+      paid_on: "Paid on"
+      edit: "Edit"
+      destroy: "Delete"
+      close: "Close"
+    create:
+      placeholder_on_name: "Name of product"
+      placeholder_on_price: "Price of product in zlotys"
+      placeholder_on_paid_on: "Date of purchase"
+      name_button_submit: "Add Expense"
+    update:
+      name_button_submit: "Update Expense"
+    delete:
+      confirmation: "Are you sure?"
+      modal:
+        confirmation: "Are you sure to delete?"
+    sort:
+      action: "Actions"
+      by: "Sort by:"
+      oldest: "By oldest."
+      newest: "By newest."
+      created_by: "By created by."
+    categories: "Categories"
+  category:
+    title: "Categories"
+    all: "All Categories"
+    new: "New Category"
+    show: "Show Categories"
+    edit: "Edit Category"
+    index:
+      ordinal_number: "#"
+      name: "Name"
+      price: "Price"
+      paid_on: "Paid on"
+      edit: "Edit"
+      destroy: "Delete"
+      close: "Close"
+    create:
+      placeholder_on_name: "Name of category"
+      name_button_submit: "Add Category"
+    update:
+      name_button_submit: "Update Category"
+    delete:
+      confirmation: "Are you sure?"
+      modal:
+        confirmation: "Are you sure to delete?"
+    sort:
+      action: "Actions"
+      by: "Sort by:"
+      oldest: "By oldest."
+      newest: "By newest."
+      created_by: "By created by."
+  activerecord:
+    errors:
+      messages:
+        not_in_future: "Can't be in the future"
+  flash:
+    controller:
+      good_create: "The record was created successfully!"
+      bad_create: "The record was not created, try again!"
+      good_update: "The record was updated successfully!"
+      bad_update: "The record was not updated, try again!"
+      good_delete: "The record was deleted successfully!"
+      bad_delete: "The record was not deleted, try again!"

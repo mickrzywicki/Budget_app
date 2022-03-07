@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root "budgets#index"
+  devise_for :users
+  resources :dashboards, only: [:index]
+  resources :categories
+  resources :expenses
 
-  resources :budgets
+  root 'dashboards#index'
 end

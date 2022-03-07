@@ -1,0 +1,6 @@
+%h1= t('dashboard')
+.left
+  = link_to t('expenses.new'), new_expense_path, class: "btn btn-lg btn-primary"
+  = link_to t('expenses.show'), expenses_path, class: "btn btn-lg btn-primary"
+  = link_to t('category.new'), new_category_path, class: "btn btn-lg btn-primary"
+  = link_to t('category.show'), categories_path, class: "btn btn-lg btn-primary"
